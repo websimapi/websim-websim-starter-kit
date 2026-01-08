@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WebSim Starter Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+    }
+  }
+  </script>
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="top-bar">
+      <div class="logo-dot"></div>
+      <div class="top-title">WebSim Starter Kit</div>
+    </header>
+
+    <main class="main">
+      <!-- Starter Guide -->
+      <section class="panel panel--active" data-panel="guide">
+        <div class="card">
+          <h1 class="card-title">Quick Starter Guide</h1>
+          <ol class="steps">
+            <li>
+              <h2>1. Start from a template</h2>
+              <p>Fork an existing sim and tweak a few words instead of starting from a blank prompt.</p>
+            </li>
+            <li>
+              <h2>2. Describe structure first</h2>
+              <p>Explain the sections you want (header, main area, buttons, etc.) before going into visuals.</p>
+            </li>
+            <li>
+              <h2>3. Then add behavior</h2>
+              <p>Mention interactions: “clickable cards,” “live counters,” “drag-to-adjust slider,” etc.</p>
+            </li>
+            <li>
+              <h2>4. Be specific about style</h2>
+              <p>Use concrete words: “minimal, off-white background, soft shadows, single accent color.”</p>
+            </li>
+            <li>
+              <h2>5. Refine with small prompts</h2>
+              <p>Iterate: “add copy buttons,” “make it mobile friendly,” “add subtle hover states.”</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 10 Genius Prompts -->
+      <section class="panel" data-panel="prompts">
+        <div class="card">
+          <h1 class="card-title">10 Genius Prompts</h1>
+          <div class="prompt-list" id="prompt-list">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Mad Libs Generator -->
+      <section class="panel" data-panel="generator">
+        <div class="card">
+          <h1 class="card-title">Mad Libs Prompt Generator</h1>
+          <div class="field-grid">
+            <label class="field">
+              <span class="field-label">Type of site</span>
+              <select id="type-select">
+                <option>portfolio</option>
+                <option>mini-game</option>
+                <option>dashboard</option>
+                <option>interactive story</option>
+                <option>creative tool</option>
+                <option>landing page</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field-label">Aesthetic</span>
+              <select id="aesthetic-select">
+                <option>minimal, card-based UI</option>
+                <option>retro 8-bit arcade</option>
+                <option>brutalist black-and-white</option>
+                <option>cozy notebook sketch</option>
+                <option>terminal hacker interface</option>
+                <option>soft pastel UI</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field-label">Utility</span>
+              <select id="utility-select">
+                <option>idea generator</option>
+                <option>habit tracker</option>
+                <option>learning playground for HTML/CSS</option>
+                <option>brainstorming whiteboard</option>
+                <option>character creator</option>
+                <option>prompt library</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="button button-primary" id="generate-btn">Generate prompt</button>
+
+          <div class="output-wrap">
+            <div class="output-label">Prompt</div>
+            <div class="output-row">
+              <textarea id="generated-prompt" readonly></textarea>
+              <button class="icon-button" id="copy-generated" aria-label="Copy prompt">
+                <span class="icon-copy"></span>
+              </button>
+            </div>
+            <div class="copy-status" id="copy-status"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="tab-bar">
+      <button class="tab-button tab-button--active" data-target="guide">Guide</button>
+      <button class="tab-button" data-target="prompts">Prompts</button>
+      <button class="tab-button" data-target="generator">Generator</button>
+    </nav>
+  </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
